@@ -277,12 +277,12 @@ namespace ServiceStack.Mvc
 			});
 		}
 
-		public static string RenderBundlePath(this HtmlHelper html, string bundlePath, BundleOptions options = BundleOptions.Minified)
+		public static string RenderBundlePath(this HtmlHelper html, string bundlePath, BundleOptions options = BundleOptions.MinifiedAndCombined)
 		{
-			if (string.IsNullOrEmpty(bundlePath))
+			if (string.IsNullOrEmpty(bundlePath) || options == BundleOptions.Normal || options == BundleOptions.Minified)
 				return "";
 
-			return bundlePath.RewriteUrl(bundlePath, options);
+			return bundlePath.RewriteUrl(options);
 		}
 	}
 }
