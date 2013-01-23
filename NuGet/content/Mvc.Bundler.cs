@@ -277,7 +277,7 @@ namespace ServiceStack.Mvc
 			});
 		}
 
-		public static string RenderBundlePath(this HtmlHelper html, string bundlePath, BundleOptions options = BundleOptions.MinifiedAndCombined)
+		public static string RenderBundleUrl(this HtmlHelper html, string bundlePath, BundleOptions options = BundleOptions.MinifiedAndCombined)
 		{
 			if (string.IsNullOrEmpty(bundlePath) || options == BundleOptions.Normal || options == BundleOptions.Minified)
 				return "";
