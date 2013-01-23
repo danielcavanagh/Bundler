@@ -282,7 +282,7 @@ namespace ServiceStack.Mvc
 			if (string.IsNullOrEmpty(bundlePath) || options == BundleOptions.Normal || options == BundleOptions.Minified)
 				return "";
 
-			return bundlePath.RewriteUrl(options);
+			return bundlePath.Replace(".bundle", "").RewriteUrl(options);
 		}
 	}
 }
