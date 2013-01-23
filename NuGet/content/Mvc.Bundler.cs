@@ -284,7 +284,7 @@ namespace ServiceStack.Mvc
 
 			bundlePath = bundlePath.Replace(".bundle", "");
 			if (options == BundleOptions.MinifiedAndCombined)
-				return bundlePath.Insert(bundlePath.LastIndexOf("."), ".min");
+				bundlePath = bundlePath.Insert(bundlePath.LastIndexOf("."), ".min");
 			
 			return bundlePath.RewriteUrl(options);
 		}
